@@ -1,11 +1,9 @@
-Sat May 07 23:12:42 CEST 2022 witness report from location: Falkland Islands (Malvinas), Abdul spotted.
-Sat May 07 23:13:19 CEST 2022 witness report from location: Falkland Islands (Malvinas), Abdul spotted.
-Sat May 07 23:14:17 CEST 2022 witness report from location: Falkland Islands (Malvinas), Abdul JOHNSON spotted.
-Sat May 07 23:18:50 CEST 2022 witness report from location: Czech Republic, ABDUL JOHNSON spotted.
-Sat May 07 23:24:17 CEST 2022 witness report from location: Serbia, CHRISTOPHER GARDNER spotted.
-Sun May 08 14:00:19 CEST 2022 witness report from location: Serbia, CHRISTOPHER GARDNER spotted.
-Sun May 08 15:08:07 CEST 2022 witness report from location: Norway, CRISTIAN RIOS MORA spotted.
-Sun May 08 15:42:12 CEST 2022 witness report from location: Norway, MORA CRISTIAN spotted. NOTE:(name partially match or in different arrangement)
-Sun May 08 15:42:47 CEST 2022 witness report from location: Norway, CRISTIAN spotted. NOTE:(name partially match or in different arrangement)
-Sun May 08 15:45:58 CEST 2022 witness report from location: Norway, CRISTIAN spotted. NOTE:(name partially match or in different arrangement)
-Sun May 08 15:46:41 CEST 2022 witness report from location: Norway, CHRISTIAN spotted. NOTE:(multiple matches found 2)
+Sun May 08 17:15:45 CEST 2022 witness report from location: Norway, CHRISTIAN spotted. NOTE:(multiple matches found 2)
+Sun May 08 17:16:48 CEST 2022 witness report from location: Norway, CHRISTIAN GARCIA spotted. NOTE:(exact match )
+Sun May 08 17:17:45 CEST 2022 witness report from location: Norway, GARCIA CHRISTIAN spotted. NOTE:(name partially match or in different arrangement)
+Sun May 08 17:19:15 CEST 2022 witness report from location: Russian Federation, CHRISTOPHER W. BURNS spotted. NOTE:(exact match )
+Sun May 08 17:19:28 CEST 2022 witness report from location: Russian Federation, CHRISTOPHER BURNS spotted. NOTE:(name partially match or in different arrangement)
+Sun May 08 17:19:53 CEST 2022 witness report from location: Russian Federation, W. BURNS spotted. NOTE:(name partially match or in different arrangement)
+Sun May 08 17:20:20 CEST 2022 witness report from location: Russian Federation, BURNS spotted. NOTE:(name partially match or in different arrangement)
+Sun May 08 17:20:52 CEST 2022 witness report from location: Russian Federation, CHRISTOPHER spotted. NOTE:(multiple matches found 5)
+Sun May 08 17:27:20 CEST 2022 witness report from location: Russian Federation, CHRISTOPHER spotted. NOTE:( multiple matches found 5)

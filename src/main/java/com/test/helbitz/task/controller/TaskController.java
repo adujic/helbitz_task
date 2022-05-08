@@ -8,6 +8,7 @@ import com.test.helbitz.task.model.api.CountryResponse;
 import com.test.helbitz.task.model.api.FbiResponse;
 import com.test.helbitz.task.model.ReportRequest;
 import com.test.helbitz.task.model.api.FbiResponseItem;
+import com.test.helbitz.task.util.HelbitzTaskConstants;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -39,16 +41,16 @@ public class TaskController {
         HttpStatus httpStatus = null;
 
         if( !isValidPhone( reportRequest.getPhoneNumber() ) ){
-            reportResponse.setCode(1);
-            reportResponse.setMessage("Phone number not valid");
+            reportResponse.setCode(HelbitzTaskConstants.ERR_PHONE);
+            reportResponse.setMessage(HelbitzTaskConstants.MSG_ERR_PHONE);
 
             httpStatus = HttpStatus.BAD_REQUEST;
 
             log.warn("Request sent with invalid phone number " + reportRequest.getPhoneNumber());
         }
         else if(!isInFbiDb(reportRequest.getName()) && !(checkFbiDb(reportRequest.getName()) >0)){
-            reportResponse.setCode(2);
-            reportResponse.setMessage("Person with reported name not found in db");
+            reportResponse.setCode(HelbitzTaskConstants.ERR_PERSON);
+            reportResponse.setMessage(HelbitzTaskConstants.MSG_ERR_PERSON);
 
             httpStatus = HttpStatus.NOT_FOUND;
 
@@ -63,13 +65,13 @@ public class TaskController {
                         + reportRequest.getName() + " spotted.";
 
                 if(isInFbiDb(reportRequest.getName())) {
-                    content += " NOTE:(exact match )\n";
+                    content += " NOTE:( exact match )\n";
                 }
                 else if(checkFbiDb(reportRequest.getName()) > 1){
-                    content += " NOTE:(multiple matches found "+ checkFbiDb(reportRequest.getName()) +")\n";
+                    content += " NOTE:( multiple matches found "+ checkFbiDb(reportRequest.getName()) +")\n";
                 }
                 else{
-                    content += " NOTE:(name partially match or in different arrangement)\n";
+                    content += " NOTE: ( name partially match or in different arrangement )\n";
                 }
 
                 Path path = Paths.get("./output_log.txt");
@@ -80,8 +82,8 @@ public class TaskController {
                     Files.write(path, content.getBytes(StandardCharsets.UTF_8));
                 }
 
-                reportResponse.setCode(0);
-                reportResponse.setMessage("Your report is accepted");
+                reportResponse.setCode(HelbitzTaskConstants.SUCCESS);
+                reportResponse.setMessage(HelbitzTaskConstants.MSG_SUCCESS);
 
                 httpStatus = HttpStatus.OK;
 
@@ -89,8 +91,8 @@ public class TaskController {
             }
             catch (IOException e){
                 //e.printStackTrace();
-                reportResponse.setCode(3);
-                reportResponse.setMessage("Error occured");
+                reportResponse.setCode(HelbitzTaskConstants.ERR);
+                reportResponse.setMessage(HelbitzTaskConstants.MSG_ERR);
 
                 httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
                 //return new ResponseEntity<ReportResponse>(reportResponse, httpStatus);
@@ -176,7 +178,7 @@ public class TaskController {
         }
         catch (NumberParseException e) {
             //e.printStackTrace();
-            log.error(
+            log.warn(
                     "Unable to parse the given phone number: "
                     + phone + e.getLocalizedMessage());
 
