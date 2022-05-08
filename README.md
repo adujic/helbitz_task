@@ -1,18 +1,18 @@
-# helbitz_task
+# HELBITZ task developer
 
-###App requiremenst
+### App requiremenst
 * Java 1.8
 * Spring Boot 2.6.7
 
-###Other dependencies
-* #####Checking phone number
+### Other dependencies
+* ##### Checking phone number
     libphonenumber
-* #####logging
+* ##### logging
   lombok
-###API-s used
-######Countries
+### API-s used
+###### Countries
 https://restcountries.com/#rest-countries
-######FBI database
+###### FBI database
 https://www.fbi.gov/wanted/api
 ### Reference Documentation
 
